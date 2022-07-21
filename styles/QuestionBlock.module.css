@@ -1,0 +1,25 @@
+.question__block {
+    background: url('../public/images/second__bg.png') no-repeat center / cover;
+    padding: 100px 0px 160px 0px;
+}
+
+.question__play {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.question__subscription {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 30px;
+}
+
+.question__span {
+    color: #575DFF;
+}

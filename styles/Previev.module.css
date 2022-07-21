@@ -1,0 +1,58 @@
+.preview {
+    background: url('../public/images/bg.png') no-repeat center / cover;
+    padding: 280px 0;
+    min-height: 100vh;
+}
+
+.preview__heading_text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    color: #FFFFFF;
+    padding-bottom: 20px;
+}
+
+.preview__span {
+    color: #FF1C6E;
+}
+
+.preview__subscription {
+    color: #575DFF;
+    font-weight: 700px;
+    padding-bottom: 60px;
+}
+
+.preview__after_text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 158%;
+    color: #FFFFFF;
+    max-width: 500px;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.secondary__btn {
+    cursor: pointer;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: #FF1C6E;
+    transition: 0.4s all ease;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 158%;
+    color: #FFFFFF;
+}
+
+.secondary__btn:hover {
+    box-shadow: 0px 1px 14px rgba(255, 28, 110, 0.5);
+}
+
+.secondary__btn:active {
+    background-color: #AC003E;
+}
+
+.price {
+    font-weight: 700;
+}
