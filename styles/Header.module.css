@@ -1,0 +1,31 @@
+.header {
+    background: #181728;
+    padding: 10px 0;
+}
+
+.header__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__block_menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header__icons_left,
+.header__icons_right,
+.header__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.header__buttons {
+    gap: 15px;
+}
+
+.header__icons_right {
+    gap: 25px;
+}
