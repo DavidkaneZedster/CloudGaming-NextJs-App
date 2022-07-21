@@ -3,7 +3,7 @@ import Logo from "../public/images/logo.svg";
 import Search from "../public/images/search.svg";
 import Link from "next/link";
 import { headerIconsRight } from "../assets/db";
-import Buttons from "./Buttons.jsx";
+import HeaderButtons from "./Buttons.js";
 
 const Header = () => {
   return (
@@ -26,7 +26,7 @@ const Header = () => {
               </Link>
             </div>
             <div className={styles.header__buttons}>
-              <Buttons />
+              <HeaderButtons />
             </div>
             <div className={styles.header__icons_right}>
               {headerIconsRight.map((item) => {

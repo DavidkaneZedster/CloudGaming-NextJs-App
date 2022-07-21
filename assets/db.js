@@ -27,15 +27,18 @@ export const headerBtns = [
     id: 1,
     buttonText: "Войти в аккаунт",
     property: "outline",
+    border: true,
   },
   {
     id: 2,
     buttonText: "Скачать клиент",
     property: "primary",
+    border: false,
   },
   {
     id: 3,
     buttonText: "Оформить подписку",
     property: "secondary",
+    border: false,
   },
 ];
