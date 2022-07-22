@@ -1,7 +1,8 @@
-import PlatformsAndGames from "../components/PlatformsAndGames";
-import Preview from "../components/Preview";
-import QuestionBlock from "../components/QuestionBlock";
-import Slider from "../components/Slider";
+import { Filters } from "../components";
+import { PlatformsAndGames } from "../components";
+import { Preview } from "../components";
+import { QuestionBlock } from "../components";
+import { Slider } from "../components";
 import styles from "../styles/Home.module.css";
 
 const Home = () => {
@@ -9,8 +10,9 @@ const Home = () => {
     <>
       <Preview />
       <Slider />
-      <QuestionBlock></QuestionBlock>
+      <QuestionBlock />
       <PlatformsAndGames />
+      <Filters />
     </>
   );
 };

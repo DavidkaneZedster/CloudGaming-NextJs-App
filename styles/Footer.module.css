@@ -19,3 +19,26 @@
     font-size: 13px;
     line-height: 206%;
 }
+
+@media screen and (max-width: 1150px) {
+    .menu__list {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 755px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .footer__logo {
+        padding-top: 25px;
+    }
+
+    .menu__list {
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+    }
+}

@@ -1,9 +1,9 @@
 import styles from "../styles/PlatformsAndGames.module.css";
-import { platformIcons } from "../assets/db";
+import { platformIcons } from "../assets";
 import Image from "next/image";
 import Link from "next/link";
 
-const PlatformsAndGames = () => {
+export const PlatformsAndGames = () => {
   return (
     <section className={styles.platform}>
       <div className="container">
@@ -36,5 +36,3 @@ const PlatformsAndGames = () => {
     </section>
   );
 };
-
-export default PlatformsAndGames;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/Buttons.module.css";
 
-const Buttons = () => {
+export const Buttons = () => {
   return (
     <>
       <Link href="/req">
@@ -16,5 +16,3 @@ const Buttons = () => {
     </>
   );
 };
-
-export default Buttons;

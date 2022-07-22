@@ -2,10 +2,10 @@ import styles from "../styles/Header.module.css";
 import Logo from "../public/images/logo.svg";
 import Search from "../public/images/search.svg";
 import Link from "next/link";
-import { headerIconsRight } from "../assets/db";
-import Buttons from "./Buttons.jsx";
+import { headerIconsRight } from "../assets";
+import { Buttons } from ".";
 
-const Header = () => {
+export const Header = () => {
   return (
     <header className={styles.header}>
       <div className="container">
@@ -43,5 +43,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

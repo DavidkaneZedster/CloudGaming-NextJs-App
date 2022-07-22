@@ -1,6 +1,6 @@
 import styles from "../styles/QuestionBlock.module.css";
 
-const QuestionBlock = ({ children }) => {
+export const QuestionBlock = ({ children }) => {
   return (
     <section className={styles.question__block}>
       <div className="container">
@@ -16,5 +16,3 @@ const QuestionBlock = ({ children }) => {
     </section>
   );
 };
-
-export default QuestionBlock;

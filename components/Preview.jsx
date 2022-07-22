@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/Previev.module.css";
 
-const Preview = () => {
+export const Preview = () => {
   return (
     <section className={styles.preview}>
       <div className="container">
@@ -24,5 +24,3 @@ const Preview = () => {
     </section>
   );
 };
-
-export default Preview;

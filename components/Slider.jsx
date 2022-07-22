@@ -1,4 +1,4 @@
-const Slider = () => {
+export const Slider = () => {
   return (
     <div
       style={{
@@ -12,5 +12,3 @@ const Slider = () => {
     </div>
   );
 };
-
-export default Slider;
