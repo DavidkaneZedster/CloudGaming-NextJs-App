@@ -7,3 +7,6 @@ export * from "./PlatformsAndGames.jsx";
 export * from "./Preview.jsx";
 export * from "./QuestionBlock.jsx";
 export * from "./Slider.jsx";
+export * from "./SearchInput.jsx";
+export * from "./Filters.jsx";
+export * from "./FilterItem.jsx";

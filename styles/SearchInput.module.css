@@ -1,0 +1,30 @@
+.input__container {
+    position: relative;
+    max-width: 350px;
+    width: 100%;
+}
+
+.search {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+}
+
+.input[type="text"] {
+    border: none;
+    max-width: 350px;
+    width: 100%;
+    background: #211F2F;
+    border-radius: 10px;
+    outline: none;
+    color: #FFFFFF;
+    padding: 8px 0px 8px 15px;
+}
+
+.input:focus {
+    outline: #575DFF solid 1px;
+}
+
+.input[type="text"]:hover::-webkit-input-placeholder { 
+    color: #575DFF; 
+}

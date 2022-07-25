@@ -1,0 +1,37 @@
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #211F2F;
+    min-width: 270px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 3px 0px 3px 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+.filter__label {
+    display: flex;
+    gap: 5px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 27px;
+}
+
+.filter__active {
+    color: #8C90AB;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 27px;
+}
+
+.filter__menu {
+    display: flex;
+}
+
+.filter__arrow {
+    position: absolute;
+    right: 15px;
+}

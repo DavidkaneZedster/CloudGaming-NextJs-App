@@ -7,6 +7,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  background: #0E0919;
+}
+
 a {
   color: inherit;
   text-decoration: none;

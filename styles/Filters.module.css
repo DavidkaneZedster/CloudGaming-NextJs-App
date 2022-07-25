@@ -1,0 +1,15 @@
+.filters {
+    padding-bottom: 30px;
+    display: flex;
+    gap: 50px;
+}
+
+.filter {
+    display: flex;
+    gap: 15px;
+}
+
+.search {
+    max-width: 350px;
+    width: 100%;
+}

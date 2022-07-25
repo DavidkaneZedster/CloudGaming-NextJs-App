@@ -87,3 +87,18 @@ export const footerMenu = [
     name: "Реквизиты",
   },
 ];
+
+export const filtersName = [
+  {
+    id: 1,
+    name: "Жанр:",
+  },
+  {
+    id: 2,
+    name: "Платформа:",
+  },
+  {
+    id: 3,
+    name: "Категория:",
+  },
+];
