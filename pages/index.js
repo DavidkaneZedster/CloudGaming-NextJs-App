@@ -3,6 +3,7 @@ import { PlatformsAndGames } from "../components";
 import { Preview } from "../components";
 import { QuestionBlock } from "../components";
 import { Slider } from "../components";
+import { Modal } from "../components/Modal";
 import { NotFound } from "../components/NotFound";
 
 const Home = () => {

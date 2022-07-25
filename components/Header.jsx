@@ -4,8 +4,11 @@ import Search from "../public/images/search.svg";
 import Link from "next/link";
 import { headerIconsRight } from "../assets";
 import { Buttons } from ".";
+import { useState } from "react";
 
 export const Header = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   return (
     <header className={styles.header}>
       <div className="container">
@@ -26,7 +29,10 @@ export const Header = () => {
               </Link>
             </div>
             <div className={styles.header__buttons}>
-              <Buttons />
+              <Buttons
+                isModalVisible={isModalVisible}
+                setIsModalVisible={setIsModalVisible}
+              />
             </div>
             <div className={styles.header__icons_right}>
               {headerIconsRight.map((item) => {
