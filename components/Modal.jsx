@@ -32,16 +32,22 @@ export const Modal = ({
               <span className={styles.password__text}>Пароль</span>
               <input className={styles.password__input} type="text" />
             </div>
-            <div className={styles.password__reset}>Забыли пароль?</div>
-            <div className={styles.login__btn}>
+            <div className={styles.password__reset}>
               <Link href="/req">
-                <a>Войти</a>
+                <a>Забыли пароль?</a>
               </Link>
             </div>
+            <Link href="/req">
+              <div className={styles.login__btn}>
+                <a>Войти</a>
+              </div>
+            </Link>
             <p className={styles.registration}>
               Еще нет аккаунта?{" "}
               <span className={styles.registration__span}>
-                Зарегистрируйтесь
+                <Link href="/req">
+                  <a>Зарегистрируйтесь</a>
+                </Link>
               </span>
             </p>
           </form>

@@ -57,6 +57,8 @@
     border-radius: 10px;
     padding: 10px 0;
     border: none;
+    color: #FFFFFF;
+    padding: 10px 10px;
 }
 
 .email__input:focus,
@@ -71,10 +73,10 @@
     text-align: right;
     color: #575DFF;
     padding-bottom: 30px;
-    
 }
 
 .login__btn {
+    cursor: pointer;
     font-weight: 400;
     font-size: 13px;
     line-height: 27px;
