@@ -12,7 +12,7 @@ export const Cards = ({ characterData }) => {
             <div className={styles.cards__block} key={id}>
               <img className={styles.image} src={image} alt={name} />
               <div className={styles.card__info}>
-                <Link href="/req">
+                <Link href={`/games/game/${id}`}>
                   <h2 className={styles.card__title}>
                     <a>{name}</a>
                   </h2>
