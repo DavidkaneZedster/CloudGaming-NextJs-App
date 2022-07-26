@@ -1,22 +1,25 @@
-import { Filters } from "../components";
 import { PlatformsAndGames } from "../components";
 import { Preview } from "../components";
 import { QuestionBlock } from "../components";
 import { Slider } from "../components";
-import { Modal } from "../components/Modal";
-import { NotFound } from "../components/NotFound";
+import { GameList } from "../components/GameList";
 
-const Home = () => {
+export async function getStaticProps(context) {
+  const response = await fetch("https://rickandmortyapi.com/api/character");
+  const characterData = await response.json();
+  return {
+    props: { characterData },
+  };
+}
+
+const Home = ({ characterData }) => {
   return (
     <>
       <Preview />
       <Slider />
       <QuestionBlock />
       <PlatformsAndGames />
-      <div className="container">
-        <Filters />
-        <NotFound />
-      </div>
+      <GameList characterData={characterData} />
     </>
   );
 };

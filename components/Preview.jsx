@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/Previev.module.css";
+import styles from "../styles/Preview.module.css";
 
 export const Preview = () => {
   return (
