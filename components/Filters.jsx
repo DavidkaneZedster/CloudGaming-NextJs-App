@@ -3,13 +3,16 @@ import { filtersName } from "../assets";
 import { FilterItem } from ".";
 import { SearchInput } from ".";
 
-export const Filters = () => {
+export const Filters = ({ searchValue, setSearchValue }) => {
   return (
     <section>
       <div className="container">
         <div className={styles.filters}>
           <div className={styles.search}>
-            <SearchInput />
+            <SearchInput
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+            />
           </div>
           <div className={styles.filter}>
             {filtersName.map((item) => {

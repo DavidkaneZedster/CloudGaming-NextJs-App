@@ -29,7 +29,6 @@ export const getStaticProps = async (context) => {
 };
 
 const Game = ({ data }) => {
-  console.log(data);
   const { id, name, status, species, gender, origin, location, image } = data;
   return (
     <div className="container">
