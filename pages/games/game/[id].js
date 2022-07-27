@@ -1,9 +1,9 @@
+import axios from "axios";
 import Link from "next/link";
 import styles from "../../../styles/CardItem.module.css";
 
 export const getStaticPaths = async () => {
-  const response = await fetch("https://rickandmortyapi.com/api/character");
-  const data = await response.json();
+  const { data } = await axios.get("https://rickandmortyapi.com/api/character");
   const paths = data?.results?.map((item) => {
     return {
       params: { id: item.id.toString() },
@@ -18,11 +18,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const response = await fetch(
+  const { data } = await axios.get(
     `https://rickandmortyapi.com/api/character/${id}`
   );
-  const data = await response.json();
-
   return {
     props: { data },
   };
