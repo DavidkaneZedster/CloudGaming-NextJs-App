@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../../../styles/CardItem.module.css";
 
 export const getStaticPaths = async () => {
-  const { data } = await axios.get("https://rickandmortyapi.com/api/character");
+  const { data } = await axios.get(`${process.env.API_URL}/?pages=*`);
   const paths = data?.results?.map((item) => {
     return {
       params: { id: item.id.toString() },
@@ -18,9 +18,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const { data } = await axios.get(
-    `https://rickandmortyapi.com/api/character/${id}`
-  );
+  const { data } = await axios.get(`${process.env.API_URL}/${id}`);
   return {
     props: { data },
   };
@@ -52,7 +50,7 @@ const Game = ({ data }) => {
           </div>
         </div>
       </div>
-      <Link href="/">
+      <Link href="/#back">
         <a>
           <h2 className={styles.back__btn}>go back</h2>
         </a>

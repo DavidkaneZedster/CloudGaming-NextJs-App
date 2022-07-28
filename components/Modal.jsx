@@ -6,6 +6,7 @@ export const Modal = ({
   isModalVisible,
   setIsModalVisible,
   toggleScrolling,
+  setIsLoggedIn,
 }) => {
   const closeModal = () => {
     setIsModalVisible(!isModalVisible);
@@ -37,7 +38,7 @@ export const Modal = ({
                 <a>Забыли пароль?</a>
               </Link>
             </div>
-            <Link href="/req">
+            <Link href="">
               <div className={styles.login__btn}>
                 <a>Войти</a>
               </div>

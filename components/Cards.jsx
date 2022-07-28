@@ -1,11 +1,45 @@
 import styles from "../styles/Cards.module.css";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export const Cards = ({ characterData, searchValue }) => {
+  const [currentData, setCurrentData] = useState(characterData);
+  const [page, setPage] = useState(1);
+
+  const totalPages = currentData.info.pages;
+
+  if (page < 1) {
+    setPage(page + 1);
+  } else if (page > 42) {
+    setPage(page - 1);
+  }
+
+  const getData = async () => {
+    const response = await axios.get(
+      `https://rickandmortyapi.com/api/character/?page=${page}`
+    );
+    const data = await response.data;
+    setCurrentData(data);
+    return data;
+  };
+
+  const getNextPage = () => {
+    setPage(page + 1);
+  };
+
+  const getPrevPage = () => {
+    setPage(page - 1);
+  };
+
+  useEffect(() => {
+    getData();
+  }, [page]);
+
   return (
     <>
-      <div className={styles.cards}>
-        {characterData?.results
+      <div className={styles.cards} id={"back"}>
+        {currentData?.results
           .filter((obj) => {
             if (obj.name.toLowerCase().includes(searchValue.toLowerCase())) {
               return true;
@@ -39,6 +73,17 @@ export const Cards = ({ characterData, searchValue }) => {
               </div>
             );
           })}
+        <div className={styles.btns}>
+          <button className={styles.btn} onClick={() => getPrevPage()}>
+            prev
+          </button>
+          <span>
+            {page} / {totalPages}
+          </span>
+          <button className={styles.btn} onClick={() => getNextPage()}>
+            next
+          </button>
+        </div>
       </div>
     </>
   );

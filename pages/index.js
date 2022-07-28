@@ -1,14 +1,12 @@
 import axios from "axios";
-import { PlatformsAndGames } from "../components";
+import { Header, PlatformsAndGames } from "../components";
 import { Preview } from "../components";
 import { QuestionBlock } from "../components";
 import { Slider } from "../components";
 import { GameList } from "../components/GameList";
 
 export async function getStaticProps(context) {
-  const response = await axios.get(
-    "https://rickandmortyapi.com/api/character/?page=3"
-  );
+  const response = await axios.get(`${process.env.API_URL}`);
   const characterData = await response.data;
   return {
     props: { characterData },
