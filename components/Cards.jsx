@@ -2,6 +2,7 @@ import styles from "../styles/Cards.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { apiKey } from "../constants";
 
 export const Cards = ({ characterData, searchValue }) => {
   const [currentData, setCurrentData] = useState(characterData);
@@ -16,9 +17,7 @@ export const Cards = ({ characterData, searchValue }) => {
   }
 
   const getData = async () => {
-    const response = await axios.get(
-      `https://rickandmortyapi.com/api/character/?page=${page}`
-    );
+    const response = await axios.get(`${apiKey}/?page=${page}`);
     const data = await response.data;
     setCurrentData(data);
     return data;

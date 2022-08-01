@@ -1,9 +1,10 @@
 import axios from "axios";
 import Link from "next/link";
+import { apiKey } from "../../../constants";
 import styles from "../../../styles/CardItem.module.css";
 
 export const getStaticPaths = async () => {
-  const { data } = await axios.get(`${process.env.API_URL}/?pages=*`);
+  const { data } = await axios.get(`${apiKey}/?page=1`);
   const paths = data?.results?.map((item) => {
     return {
       params: { id: item.id.toString() },
@@ -12,13 +13,13 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const { data } = await axios.get(`${process.env.API_URL}/${id}`);
+  const { data } = await axios.get(`${apiKey}/${id}`);
   return {
     props: { data },
   };
