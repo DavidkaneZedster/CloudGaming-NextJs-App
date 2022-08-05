@@ -12,7 +12,7 @@ export const Footer = () => {
             {footerMenu.map((item) => {
               return (
                 <li className={styles.menu__item} key={item.id}>
-                  <Link href="/req">
+                  <Link href="/">
                     <a className={styles.menu__link}>{item.name}</a>
                   </Link>
                 </li>
@@ -20,7 +20,7 @@ export const Footer = () => {
             })}
           </ul>
           <div className={styles.footer__logo}>
-            <Link href="/req">
+            <Link href="/">
               <a>
                 <FooterLogo />
               </a>

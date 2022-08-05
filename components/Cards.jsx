@@ -1,23 +1,23 @@
 import styles from "../styles/Cards.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { apiKey } from "../constants";
+import { cardsData } from "../pages/api/cardsData.js";
 
 export const Cards = ({ characterData, searchValue }) => {
   const [currentData, setCurrentData] = useState(characterData);
   const [page, setPage] = useState(1);
 
-  const totalPages = currentData.info.pages;
+  const totalPages = currentData?.info?.pages;
+  const firstPage = 1;
 
-  if (page < 1) {
+  if (page < firstPage) {
     setPage(page + 1);
-  } else if (page > 42) {
+  } else if (page > totalPages) {
     setPage(page - 1);
   }
 
   const getData = async () => {
-    const response = await axios.get(`${apiKey}/?page=${page}`);
+    const response = await cardsData.get(`/?page=${page}`);
     const data = await response.data;
     setCurrentData(data);
     return data;

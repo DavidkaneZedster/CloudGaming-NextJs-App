@@ -75,7 +75,13 @@
     padding-bottom: 30px;
 }
 
-.login__btn {
+.auth__btn_container {
+    display: flex;
+    justify-content: center;
+}
+
+.login__btn,
+.logout__btn {
     cursor: pointer;
     font-weight: 400;
     font-size: 13px;
@@ -88,6 +94,18 @@
     padding: 5px 20px;
     margin: 0 auto;
     text-align: center;
+    border: none;
+    transition: 0.6s all ease;
+}
+
+.logout__btn {
+    background-color: #353bfb;
+    margin-top: 10px;
+}
+
+.login__btn:hover,
+.logout__btn:hover {
+    opacity: 0.65;
 }
 
 .registration {

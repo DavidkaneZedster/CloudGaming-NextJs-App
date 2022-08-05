@@ -1,18 +1,22 @@
 import Head from "next/head";
-import axios from "axios";
 import { PlatformsAndGames } from "../components";
 import { Preview } from "../components";
 import { QuestionBlock } from "../components";
 import { Slider } from "../components";
 import { GameList } from "../components/GameList";
-import { apiKey } from "../constants";
+import { cardsData } from "./api/cardsData";
 
 export async function getStaticProps(context) {
-  const response = await axios.get(`${apiKey}`);
-  const characterData = await response.data;
-  return {
-    props: { characterData },
-  };
+  try {
+    const response = await cardsData.get();
+    const characterData = await response.data;
+
+    return {
+      props: { characterData },
+    };
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 const Home = ({ characterData }) => {
@@ -20,8 +24,8 @@ const Home = ({ characterData }) => {
     <>
       <Head>
         <title>Cloud-Gaming-Next.js-App</title>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charSet="UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="" />
       </Head>

@@ -5,10 +5,12 @@ import Link from "next/link";
 import { headerIconsRight } from "../assets";
 import { Buttons } from ".";
 import { useState } from "react";
+import { userAtom } from ".";
+import { useAtomValue } from "jotai";
 
-export const Header = () => {
+export const Header = ({ isLoggedIn, setIsLoggedIn }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-
+  const userName = useAtomValue(userAtom);
   return (
     <header className={styles.header}>
       <div className="container">
@@ -22,6 +24,13 @@ export const Header = () => {
           </div>
           <div className={styles.header__block_menu}>
             <div className={styles.header__icons_left}>
+              {userName ? (
+                <div className={styles.authorized__user}>
+                  Welcome, {userName}!
+                </div>
+              ) : (
+                <div className={styles.authorized__user}>Guest</div>
+              )}
               <Link href="/zero">
                 <a>
                   <Search />
@@ -30,6 +39,8 @@ export const Header = () => {
             </div>
             <div className={styles.header__buttons}>
               <Buttons
+                isLoggedIn={isLoggedIn}
+                setIsLoggedIn={setIsLoggedIn}
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
               />
@@ -37,7 +48,7 @@ export const Header = () => {
             <div className={styles.header__icons_right}>
               {headerIconsRight.map((item) => {
                 return (
-                  <Link href="/req" key={item.id}>
+                  <Link href="/" key={item.id}>
                     <a>{item.icon}</a>
                   </Link>
                 );

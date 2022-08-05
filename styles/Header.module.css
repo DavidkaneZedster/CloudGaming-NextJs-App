@@ -29,3 +29,9 @@
 .header__icons_right {
     gap: 25px;
 }
+
+.authorized__user {
+    color: #FFF;
+    margin-right: 30px;
+    font-size: 20px;
+}

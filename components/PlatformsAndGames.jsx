@@ -15,7 +15,7 @@ export const PlatformsAndGames = () => {
             {platformIcons.map((item) => {
               return (
                 <div className={styles.icon} key={item.id}>
-                  <Link href="/req">
+                  <Link href="/">
                     <a>
                       <Image src={item.icon} alt={item.alt} />
                     </a>

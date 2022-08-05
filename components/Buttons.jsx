@@ -3,7 +3,12 @@ import { useState } from "react";
 import styles from "../styles/Buttons.module.css";
 import { Modal } from "./Modal";
 
-export const Buttons = ({ isModalVisible, setIsModalVisible }) => {
+export const Buttons = ({
+  isModalVisible,
+  setIsModalVisible,
+  isLoggedIn,
+  setIsLoggedIn,
+}) => {
   const [scrollIsActive, setScrollIsActive] = useState(true);
 
   const disableScrolling = () => {
@@ -29,19 +34,21 @@ export const Buttons = ({ isModalVisible, setIsModalVisible }) => {
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
         toggleScrolling={toggleScrolling}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
       />
-      <Link href="">
+      <Link href="/">
         <a
           className={styles.outline__btn}
           onClick={() => toggleScrolling() & setIsModalVisible(!isModalVisible)}
         >
-          Войти в аккаунт
+          {isLoggedIn ? "Выйти из аккаунта" : "Войти в аккаунт"}
         </a>
       </Link>
-      <Link href="/req">
+      <Link href="/">
         <a className={styles.primary__btn}>Скачать клиент</a>
       </Link>
-      <Link href="/req">
+      <Link href="/">
         <a className={styles.secondary__btn}>Оформить подписку</a>
       </Link>
     </>
