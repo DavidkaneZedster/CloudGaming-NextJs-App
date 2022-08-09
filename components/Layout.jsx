@@ -12,9 +12,8 @@ const Layout = ({ children }) => {
         children
       ) : (
         <h1
+          className="system__notifications"
           style={{
-            color: "#FFF",
-            textAlign: "center",
             height: "420px",
             marginTop: "20%",
           }}

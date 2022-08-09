@@ -12,3 +12,4 @@ export * from "./Preview.jsx";
 export * from "./QuestionBlock.jsx";
 export * from "./SearchInput.jsx";
 export * from "./Slider.jsx";
+export * from "./Layout.jsx";

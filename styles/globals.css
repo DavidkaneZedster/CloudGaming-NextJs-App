@@ -27,6 +27,14 @@ li {
   color: #FFFFFF;
 }
 
+.system__notifications {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 40px;
+  height: 420px;
+  margin-top: 20%;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }

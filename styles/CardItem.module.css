@@ -63,13 +63,12 @@
 
 .image {
     border-radius: 10px 0px 0px 10px;
-    width: 420px;
-    height: 410px;
     opacity: 0.7;
 }
 
 .male {
     font-size: 20px;
+    padding-bottom: 20px;
 }   
 
 .back__btn {

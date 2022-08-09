@@ -4,7 +4,7 @@ import Close from "../public/images/close__modal.svg";
 import { useForm } from "react-hook-form";
 import { useAtom, atom } from "jotai";
 
-const adminData = {
+export const adminData = {
   login: "admin",
   password: "admin",
 };
@@ -39,6 +39,7 @@ export const Modal = ({
       ) {
         alert("success");
         reset();
+        closeModal();
         setIsLoggedIn(true);
         setIsUserName(data.login);
       } else {
@@ -112,15 +113,7 @@ export const Modal = ({
             </div>
             <div className={styles.auth__btn_container}>
               {isLoggedIn ? null : (
-                <button
-                  className={styles.login__btn}
-                  type="submit"
-                  onClick={() =>
-                    setTimeout(() => {
-                      closeModal();
-                    }, 100)
-                  }
-                >
+                <button className={styles.login__btn} type="submit">
                   Войти
                 </button>
               )}

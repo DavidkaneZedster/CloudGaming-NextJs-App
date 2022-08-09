@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ["rickandmortyapi.com"],
+  },
 };
 
 module.exports = nextConfig;
@@ -14,5 +17,8 @@ module.exports = {
     });
 
     return config;
+  },
+  images: {
+    domains: ["rickandmortyapi.com"],
   },
 };

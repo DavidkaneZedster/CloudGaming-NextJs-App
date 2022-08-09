@@ -5,21 +5,36 @@ import { QuestionBlock } from "../components";
 import { Slider } from "../components";
 import { GameList } from "../components/GameList";
 import { cardsData } from "./api/cardsData";
+import { useQuery, dehydrate, QueryClient } from "@tanstack/react-query";
 
-export async function getStaticProps(context) {
+const getCharacterData = async () => {
+  const { data } = await cardsData.get();
+  return data;
+};
+
+export async function getStaticProps() {
+  const queryClient = new QueryClient();
   try {
-    const response = await cardsData.get();
-    const characterData = await response.data;
-
+    await queryClient.prefetchQuery(["characterData"], () =>
+      getCharacterData()
+    );
     return {
-      props: { characterData },
+      props: {
+        dehydratedState: dehydrate(queryClient),
+      },
     };
   } catch (error) {
     console.log(error);
   }
 }
 
-const Home = ({ characterData }) => {
+const Home = () => {
+  const { data } = useQuery(["characterData"], () => getCharacterData(), {
+    onError: (error) => {
+      console.log(error.message);
+    },
+  });
+
   return (
     <>
       <Head>
@@ -33,7 +48,7 @@ const Home = ({ characterData }) => {
       <Slider />
       <QuestionBlock />
       <PlatformsAndGames />
-      <GameList characterData={characterData} />
+      <GameList characterData={data} />
     </>
   );
 };
