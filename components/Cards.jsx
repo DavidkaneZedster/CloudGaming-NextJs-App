@@ -42,9 +42,9 @@ export const Cards = ({ characterData, searchValue }) => {
     <>
       <div className={styles.cards} id={"back"}>
         {query.isLoading ? (
-          <div style={{ color: "#FFF" }}>Loading...</div>
+          <div className="system__notifications">Loading...</div>
         ) : query.isError ? (
-          <div style={{ color: "#FFF" }}>Error!</div>
+          <div className="system__notifications">Error!</div>
         ) : (
           currentData?.results
             .filter((obj) => {
