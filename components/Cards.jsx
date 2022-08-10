@@ -5,8 +5,23 @@ import { cardsData } from "../pages/api/cardsData.js";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 
-export const Cards = ({ characterData, searchValue }) => {
-  const [currentData, setCurrentData] = useState(characterData);
+export const Cards = ({ searchValue }) => {
+  const getCharacterData = async () => {
+    const { data } = await cardsData.get();
+    return data;
+  };
+
+  const { data, isLoading, isError } = useQuery(
+    ["characterData"],
+    () => getCharacterData(),
+    {
+      onError: (error) => {
+        console.log(error.message);
+      },
+    }
+  );
+
+  const [currentData, setCurrentData] = useState(data);
   const [page, setPage] = useState(1);
 
   const getData = async () => {
@@ -22,7 +37,6 @@ export const Cards = ({ characterData, searchValue }) => {
 
   const totalPages = currentData?.info?.pages;
   const firstPage = 1;
-  const query = useQuery(["cardsItems"], () => getData());
 
   const getNextPage = () => {
     setPage(page + 1);
@@ -41,9 +55,9 @@ export const Cards = ({ characterData, searchValue }) => {
   return (
     <>
       <div className={styles.cards} id={"back"}>
-        {query.isLoading ? (
+        {isLoading ? (
           <div className="system__notifications">Loading...</div>
-        ) : query.isError ? (
+        ) : isError ? (
           <div className="system__notifications">Error!</div>
         ) : (
           currentData?.results

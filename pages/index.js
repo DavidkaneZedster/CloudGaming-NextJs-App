@@ -7,7 +7,7 @@ import { GameList } from "../components/GameList";
 import { cardsData } from "./api/cardsData";
 import { useQuery, dehydrate, QueryClient } from "@tanstack/react-query";
 
-const getCharacterData = async () => {
+export const getCharacterData = async () => {
   const { data } = await cardsData.get();
   return data;
 };

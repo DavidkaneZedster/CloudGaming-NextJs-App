@@ -30,7 +30,7 @@ export const getCardItem = async (id) => {
   return data;
 };
 
-export const getStaticProps = async (context) => {
+export async function getStaticProps(context) {
   const queryClient = new QueryClient();
   try {
     const id = context.params.id;
@@ -43,20 +43,21 @@ export const getStaticProps = async (context) => {
   } catch (error) {
     console.log(error);
   }
-};
+}
 
 const Game = () => {
   const router = useRouter();
   const { id } = router.query;
-  const {
-    data: response,
-    isLoading,
-    error,
-  } = useQuery(["cardItem", id], () => getCardItem(id), {
-    onError: (error) => {
-      console.log(error.message);
-    },
-  });
+
+  const { data, isLoading, error } = useQuery(
+    ["cardItem"],
+    () => getCardItem(id),
+    {
+      onError: (error) => {
+        console.log(error.message);
+      },
+    }
+  );
 
   return (
     <>
@@ -72,28 +73,28 @@ const Game = () => {
             <div className={styles.cards__block}>
               <Image
                 className={styles.image}
-                src={response.image}
-                alt={response.name}
+                src={data.image}
+                alt={data.name}
                 width={550}
                 height={350}
                 priority={true}
               />
               <div className={styles.card__info}>
                 <h2 className={styles.card__title}>
-                  {response.id}, {response.name}
+                  {data.id}, {data.name}
                 </h2>
                 <h4 className={styles.card__subtitle}>
-                  {response.status} - {response.species}
+                  {data.status} - {data.species}
                 </h4>
                 <div className={styles.last__location}>
                   <h4 className={styles.last__known}>Last known location:</h4>
-                  {response.location.name}
+                  {data.location.name}
                 </div>
                 <div className={styles.first__location}>
                   <h4 className={styles.first__known}>First seen in:</h4>
-                  {response.origin.name}
+                  {data.origin.name}
                 </div>
-                <div className={styles.male}>Gender: {response.gender}</div>
+                <div className={styles.male}>Gender: {data.gender}</div>
               </div>
             </div>
           </div>

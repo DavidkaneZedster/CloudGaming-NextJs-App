@@ -1,5 +1,6 @@
 import styles from "../styles/FilterItem.module.css";
 import ArrowDown from "../public/images/arrow-down.svg";
+import Link from "next/link";
 
 export const FilterItem = ({ name }) => {
   return (
@@ -12,7 +13,9 @@ export const FilterItem = ({ name }) => {
         <div className={styles.filter__list}>
           <ul className={styles.filter__menu}>
             <li className={styles.filter__menu_item}>
-              <a className={styles.filter__menu_link} href="/"></a>
+              <Link href="/">
+                <a className={styles.filter__menu_link}></a>
+              </Link>
             </li>
           </ul>
         </div>

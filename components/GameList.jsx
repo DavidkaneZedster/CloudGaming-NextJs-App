@@ -11,7 +11,7 @@ export const GameList = ({ characterData }) => {
       {characterData == null ? (
         <NotFound />
       ) : (
-        <Cards characterData={characterData} searchValue={searchValue} />
+        <Cards searchValue={searchValue} />
       )}
     </div>
   );

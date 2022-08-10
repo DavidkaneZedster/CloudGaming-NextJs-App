@@ -8,19 +8,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-      {isLoggedIn ? (
-        children
-      ) : (
-        <h1
-          className="system__notifications"
-          style={{
-            height: "420px",
-            marginTop: "20%",
-          }}
-        >
-          u are not authorized...
-        </h1>
-      )}
+      {children}
       <Footer />
     </>
   );
